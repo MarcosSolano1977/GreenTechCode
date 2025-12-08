@@ -1,379 +1,431 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto | Green Tech Code</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content="Astro v5.3.0" />
+    <title>Contacto | Green Technological</title>
+    <link rel="stylesheet" href="/astro/index.CDtrkemx.css" />
 
     <style>
-        :root {
-            --bg: #050816;
-            --bg-card: #0b1020;
-            --accent: #4ade80;
-            --accent-soft: #22c55e33;
-            --text-main: #e5e7eb;
-            --text-muted: #9ca3af;
-            --border-soft: #1f2933;
+      :root {
+        --brand-navy: #0a3254;
+        --brand-navy-soft: #012f3f;
+        --brand-teal: #01a2ae;
+        --brand-yellow: #f5a800;
+        --brand-red: #bc2c2f;
+        --bg-page: #f5f7fa;
+        --text-main: #102a43;
+        --text-muted: #6b7280;
+        --card-border: #d0d7e2;
+      }
+
+      html {
+        font-size: 17px;
+      }
+
+      body.contact-page {
+        font-family: "Gotham Rounded", "Gilroy", system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg-page);
+        color: var(--text-main);
+      }
+
+      /* HEADER oscuro consistente */
+      ._header_1bct4_2 {
+        background: linear-gradient(
+          135deg,
+          var(--brand-navy-soft),
+          var(--brand-navy)
+        );
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      }
+
+      ._links_1bct4_2 {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .nav-item {
+        color: #ffffff;
+        opacity: 0.8;
+        text-decoration: none;
+        font-size: 0.95rem;
+        padding: 0.35rem 0.4rem;
+        border-bottom: 2px solid transparent;
+        transition: opacity 0.15s ease, border-color 0.15s ease;
+      }
+
+      .nav-item:hover {
+        opacity: 1;
+        border-color: rgba(1, 162, 174, 0.4);
+      }
+
+      .nav-item.active {
+        opacity: 1;
+        font-weight: 600;
+        border-color: var(--brand-teal);
+      }
+
+      /* Layout principal */
+      main {
+        padding: 4rem 1.5rem;
+      }
+
+      .contact-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 2.5rem;
+        align-items: flex-start;
+      }
+
+      .contact-intro h1 {
+        font-family: "Gilroy", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        font-weight: 700;
+        font-size: clamp(2.1rem, 3vw, 2.6rem);
+        color: var(--brand-navy);
+        margin-bottom: 0.75rem;
+      }
+
+      .contact-intro p {
+        max-width: 600px;
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-badge {
+        font-size: 0.9rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid #c3d0e6;
+        background: #ffffff;
+        color: var(--text-muted);
+      }
+
+      .contact-badge span {
+        font-weight: 600;
+        color: var(--brand-navy);
+      }
+
+      .contact-info-card {
+        background: #ffffff;
+        border-radius: 1rem;
+        padding: 1.4rem 1.6rem;
+        border: 1px solid var(--card-border);
+        box-shadow: 0 10px 25px rgba(15, 35, 52, 0.06);
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-top: 0.5rem;
+      }
+
+      .contact-info-card h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--brand-navy-soft);
+        margin-bottom: 0.3rem;
+      }
+
+      .contact-info-card p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin: 0.1rem 0;
+      }
+
+      .contact-info-card a {
+        color: var(--brand-teal);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-info-card a:hover {
+        text-decoration: underline;
+      }
+
+      /* Formulario */
+      .contact-form-card {
+        background: #ffffff;
+        border-radius: 1rem;
+        padding: 1.8rem 1.6rem;
+        border: 1px solid var(--card-border);
+        box-shadow: 0 10px 25px rgba(15, 35, 52, 0.06);
+      }
+
+      .contact-form-card h2 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--brand-navy-soft);
+        margin-bottom: 0.4rem;
+      }
+
+      .contact-form-card p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 1.4rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .form-field label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--brand-navy);
+      }
+
+      .form-field span.helper {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .form-field input,
+      .form-field textarea {
+        border-radius: 0.7rem;
+        border: 1px solid #cbd5e1;
+        padding: 0.65rem 0.8rem;
+        font-size: 0.95rem;
+        font-family: inherit;
+        resize: vertical;
+        min-height: 42px;
+        outline: none;
+        background: #f9fafb;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease,
+          background-color 0.15s ease;
+      }
+
+      .form-field input::placeholder,
+      .form-field textarea::placeholder {
+        color: #9ca3af;
+      }
+
+      .form-field input:focus,
+      .form-field textarea:focus {
+        border-color: var(--brand-teal);
+        box-shadow: 0 0 0 1px rgba(1, 162, 174, 0.15);
+        background: #ffffff;
+      }
+
+      textarea {
+        min-height: 110px;
+      }
+
+      .contact-submit {
+        margin-top: 0.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .contact-submit button {
+        border: none;
+        border-radius: 999px;
+        padding: 0.7rem 1.4rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: linear-gradient(
+          135deg,
+          var(--brand-teal),
+          var(--brand-navy)
+        );
+        color: #ffffff;
+        align-self: flex-start;
+      }
+
+      .contact-submit button:hover {
+        opacity: 0.95;
+      }
+
+      .contact-submit small {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      @media (max-width: 900px) {
+        main {
+          padding: 3rem 1.25rem;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .contact-container {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding: 2.5rem 1rem 3.5rem;
         }
 
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
-            color: var(--text-main);
-            min-height: 100vh;
-            padding: 2rem 1.5rem 3rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+        .contact-form-card,
+        .contact-info-card {
+          padding: 1.4rem 1.2rem;
         }
-
-        header {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .breadcrumb {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
-        }
-
-        .breadcrumb a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 3vw, 2.6rem);
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-            color: var(--text-muted);
-            max-width: 600px;
-        }
-
-        .layout {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
-            gap: 1.75rem;
-            align-items: flex-start;
-        }
-
-        .card {
-            background: linear-gradient(145deg, #020617, #020617, #020617, #020617);
-            border-radius: 1rem;
-            padding: 1.6rem 1.4rem;
-            border: 1px solid var(--border-soft);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: "";
-            position: absolute;
-            inset: -40%;
-            background: radial-gradient(circle at top left, var(--accent-soft), transparent 55%);
-            opacity: 0.4;
-            pointer-events: none;
-        }
-
-        .card h2 {
-            font-size: 1.1rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 0.75rem;
-        }
-
-        .contact-block {
-            position: relative;
-            z-index: 1;
-        }
-
-        .info-row {
-            margin-top: 0.75rem;
-            font-size: 0.9rem;
-        }
-
-        .info-row span {
-            display: inline-block;
-            min-width: 90px;
-            color: var(--text-muted);
-        }
-
-        .info-row a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .info-row a:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            list-style: none;
-            margin-top: 0.9rem;
-        }
-
-        ul li {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 0.4rem;
-        }
-
-        ul li::before {
-            content: "•";
-            color: var(--accent);
-            display: inline-block;
-            width: 1rem;
-            margin-left: -1rem;
-        }
-
-        form {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
-        }
-
-        .field {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 0.75rem 0.85rem;
-            border-radius: 0.7rem;
-            border: 1px solid var(--border-soft);
-            background: #020617;
-            color: var(--text-main);
-            font-size: 0.9rem;
-            transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #4b5563;
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 1px var(--accent-soft);
-            background: #020617;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        button {
-            margin-top: 0.5rem;
-            padding: 0.85rem 1.4rem;
-            border-radius: 999px;
-            border: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            background: linear-gradient(to right, #22c55e, #4ade80);
-            color: #020617;
-            align-self: flex-start;
-        }
-
-        button:hover {
-            filter: brightness(1.05);
-        }
-
-        .form-note {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-top: 0.4rem;
-        }
-
-        footer {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            border-top: 1px solid #111827;
-            padding-top: 1rem;
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 900px) {
-            .layout {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            body {
-                padding: 1.5rem 1rem 2.5rem;
-            }
-
-            .card {
-                padding: 1.3rem 1.05rem;
-            }
-
-            footer {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
 
-    <header>
-        <p class="breadcrumb">
-            <a href="../index.html">← Volver al inicio</a> · Green Tech Code
-        </p>
-        <h1>Contacto</h1>
-        <p class="subtitle">
-            Contanos sobre tu proyecto y te ayudamos a aterrizar el alcance técnico, el esfuerzo estimado
-            y los próximos pasos para convertir tu idea en una solución real.
-        </p>
+  <body class="contact-page">
+    <header class="_header_1bct4_2">
+      <div class="page-container">
+        <section class="_wrapper_1bct4_2">
+          <div class="_logo_1bct4_2">
+            <a href="/">
+              <img
+                src="/astro/logo.CR4Oi_Bi_Z1S3iMP.webp"
+                alt="Green Tech Logo"
+                width="200"
+              />
+            </a>
+          </div>
+          <div class="_links_1bct4_2">
+            <a href="/" class="nav-item">Home</a>
+            <a href="/services" class="nav-item">Servicios</a>
+            <a href="/portfolio" class="nav-item">Portafolio</a>
+            <a href="/Contact" class="nav-item active">Contacto</a>
+          </div>
+        </section>
+      </div>
     </header>
 
-    <main class="layout">
+    <main>
+      <div class="contact-container">
+        <!-- Columna izquierda: texto + info -->
+        <section class="contact-intro">
+          <h1>Hablemos de tu proyecto</h1>
+          <p>
+            Contanos brevemente qué necesitás: desde un MVP hasta una solución
+            a la medida. Te respondemos con ideas claras, tiempos realistas y
+            los siguientes pasos sugeridos.
+          </p>
 
-        <!-- Columna izquierda: info -->
-        <section class="card contact-block">
-            <h2>Hablemos de tu proyecto</h2>
+          <div class="contact-badges">
+            <div class="contact-badge">
+              <span>+ Descubrimiento</span> de necesidades
+            </div>
+            <div class="contact-badge">
+              <span>+ Prototipado</span> rápido
+            </div>
+            <div class="contact-badge">
+              <span>+ Acompañamiento</span> técnico
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <h2>Otros canales de contacto</h2>
             <p>
-                Trabajamos en desarrollo de software, prototipado (MVP), diseño de landing pages,
-                mantenimiento de sitios y consultoría tecnológica a la medida.
+              Correo: 
+              <a href="mailto:contacto@greentechnological.com">
+                contacto@greentechnological.com
+              </a>
             </p>
-
-            <div class="info-row">
-                <span>Correo:</span>
-                <a href="mailto:contacto@greentechnological.com">
-                    contacto@greentechnological.com
-                </a>
-            </div>
-
-            <div class="info-row">
-                <span>Empresa:</span>
-                <strong>Green Technological Solutions for People S.A.</strong>
-            </div>
-
-            <div class="info-row">
-                <span>Marca:</span>
-                <strong>Green Tech Code</strong>
-            </div>
-
-            <ul>
-                <li>Proyectos pequeños, medianos o por fases.</li>
-                <li>Podemos partir de una idea, un prototipo o requerimientos formales.</li>
-                <li>Te damos una estimación honesta, con enfoque en viabilidad.</li>
-            </ul>
+            <p>
+              Si preferís, también podemos agendar una videollamada para revisar
+              tu idea en detalle.
+            </p>
+          </div>
         </section>
 
         <!-- Columna derecha: formulario -->
-        <section class="card contact-block">
-            <h2>Envíanos un mensaje</h2>
-            <p>
-                Completá este formulario y te responderemos con preguntas clave o una propuesta inicial,
-                según el nivel de detalle que compartás.
-            </p>
+        <section class="contact-form-card">
+          <h2>Envíanos un mensaje</h2>
+          <p>
+            Completá el formulario y nos pondremos en contacto con vos lo antes
+            posible.
+          </p>
 
-            <form action="mailto:contacto@greentechnological.com" method="post" enctype="text/plain">
-                <div class="field">
-                    <label for="nombre">Nombre completo</label>
-                    <input
-                        id="nombre"
-                        name="Nombre"
-                        type="text"
-                        placeholder="Tu nombre completo"
-                        required
-                    />
-                </div>
+          <!-- Por ahora el form usa mailto. Más adelante se puede conectar a un backend o servicio de formularios. -->
+          <form
+            action="mailto:contacto@greentechnological.com"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="form-field">
+              <label for="nombre">Nombre completo</label>
+              <input
+                type="text"
+                id="nombre"
+                name="Nombre"
+                placeholder="Tu nombre completo"
+                required
+              />
+            </div>
 
-                <div class="field">
-                    <label for="correo">Correo electrónico</label>
-                    <input
-                        id="correo"
-                        name="Correo"
-                        type="email"
-                        placeholder="tu@correo.com"
-                        required
-                    />
-                </div>
+            <div class="form-field">
+              <label for="correo">Correo electrónico</label>
+              <input
+                type="email"
+                id="correo"
+                name="Correo"
+                placeholder="tu@correo.com"
+                required
+              />
+            </div>
 
-                <div class="field">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea
-                        id="mensaje"
-                        name="Mensaje"
-                        rows="5"
-                        placeholder="Contanos brevemente sobre tu proyecto o idea"
-                        required
-                    ></textarea>
-                </div>
+            <div class="form-field">
+              <label for="asunto">Asunto (opcional)</label>
+              <input
+                type="text"
+                id="asunto"
+                name="Asunto"
+                placeholder="Ejemplo: Prototipo para app interna"
+              />
+            </div>
 
-                <button type="submit">Enviar mensaje</button>
+            <div class="form-field">
+              <label for="mensaje">Mensaje</label>
+              <span class="helper">
+                Contanos brevemente sobre tu proyecto, idea o necesidad.
+              </span>
+              <textarea
+                id="mensaje"
+                name="Mensaje"
+                placeholder="Ejemplo: Necesitamos un MVP para validar una nueva solución con nuestros clientes..."
+                required
+              ></textarea>
+            </div>
 
-                <p class="form-note">
-                    Al hacer clic en “Enviar mensaje” se abrirá tu aplicación de correo con la información del formulario.
-                </p>
-            </form>
+            <div class="contact-submit">
+              <button type="submit">Enviar mensaje</button>
+              <small>
+                Al enviar este formulario, aceptás que nos comuniquemos con vos
+                para dar seguimiento a tu consulta.
+              </small>
+            </div>
+          </form>
         </section>
-
+      </div>
     </main>
 
-    <footer>
-        <span>© <span id="year"></span> Green Tech Code · Green Technological Solutions for People S.A.</span>
-        <span>
-            Escríbenos a
-            <a href="mailto:contacto@greentechnological.com">contacto@greentechnological.com</a>
-        </span>
+    <footer class="_footer_14vbs_2">
+      <div class="page-container">
+        <section class="_wrapper_14vbs_2">
+          <p>© 2025. Todos los derechos reservados.</p>
+        </section>
+      </div>
     </footer>
-
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-
-</body>
+  </body>
 </html>
 

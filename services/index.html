@@ -8,32 +8,65 @@
     <title>Servicios | Green Technological</title>
     <link rel="stylesheet" href="/astro/index.CDtrkemx.css" />
 
-    <!-- Estilos propios página Servicios, usando guía de marca -->
     <style>
       :root {
-        /* Colores de la guía de marca */
-        --brand-navy: #0a3254; /* PANTONE 540 C aprox (R10 G50 B84) */
-        --brand-navy-soft: #012f3f; /* PANTONE 7692 C aprox (R1 G47 B63) */
-        --brand-teal: #01a2ae; /* PANTONE 7457 C aprox (R1 G162 B174) */
-        --brand-yellow: #f5a800; /* PANTONE 130 C aprox (R245 G168 B0) */
-        --brand-red: #bc2c2f; /* PANTONE 7620 C aprox (R188 G44 B47) */
+        --brand-navy: #0a3254;
+        --brand-navy-soft: #012f3f;
+        --brand-teal: #01a2ae;
+        --brand-yellow: #f5a800;
+        --brand-red: #bc2c2f;
         --bg-page: #f5f7fa;
         --text-main: #102a43;
         --text-muted: #6b7280;
         --card-border: #d0d7e2;
       }
 
-      /* Aumentar base tipográfica (16px -> 17px aprox) */
       html {
         font-size: 17px;
       }
 
-      /* Tipografías según libro de marca */
       body.services-page {
         font-family: "Gotham Rounded", "Gilroy", system-ui, -apple-system,
           BlinkMacSystemFont, "Segoe UI", sans-serif;
         background: var(--bg-page);
         color: var(--text-main);
+      }
+
+      /* HEADER: fondo oscuro para que el texto blanco se vea */
+      ._header_1bct4_2 {
+        background: linear-gradient(
+          135deg,
+          var(--brand-navy-soft),
+          var(--brand-navy)
+        );
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      }
+
+      ._links_1bct4_2 {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .nav-item {
+        color: #ffffff;
+        opacity: 0.8;
+        text-decoration: none;
+        font-size: 0.95rem;
+        padding: 0.35rem 0.4rem;
+        border-bottom: 2px solid transparent;
+        transition: opacity 0.15s ease, border-color 0.15s ease;
+      }
+
+      .nav-item:hover {
+        opacity: 1;
+        border-color: rgba(1, 162, 174, 0.4);
+      }
+
+      .nav-item.active {
+        opacity: 1;
+        font-weight: 600;
+        border-color: var(--brand-teal);
       }
 
       .services-page main {
@@ -192,7 +225,6 @@
         color: var(--text-muted);
       }
 
-      /* Responsive tweaks */
       @media (max-width: 900px) {
         .services-page main {
           padding: 3rem 1.25rem;
@@ -216,7 +248,6 @@
   </head>
 
   <body class="services-page">
-    <!-- HEADER: mismo que el home (Astro) -->
     <header class="_header_1bct4_2">
       <div class="page-container">
         <section class="_wrapper_1bct4_2">
@@ -239,15 +270,15 @@
             </a>
           </div>
           <div class="_links_1bct4_2">
-            <a href="/" class="hidden tablet:inline-block">Home</a>
-            <a href="/services" class="active">Services</a>
-            <a href="/portfolio">Portfolio</a>
+            <a href="/" class="nav-item">Home</a>
+            <a href="/services" class="nav-item active">Servicios</a>
+            <a href="/portfolio" class="nav-item">Portfolio</a>
+            <a href="/Contact" class="nav-item">Contacto</a>
           </div>
         </section>
       </div>
     </header>
 
-    <!-- CONTENIDO SERVICIOS -->
     <main>
       <div class="services-container">
         <section class="services-intro">
@@ -286,9 +317,7 @@
               <span>Integraciones</span>
             </div>
             <div class="service-cta">
-              <a
-                href="mailto:contacto@greentechnological.com?subject=Desarrollo%20de%20software"
-              >
+              <a href="mailto:contacto@greentechnological.com?subject=Desarrollo%20de%20software">
                 Cotizar desarrollo
               </a>
               <span>Alcance y esfuerzo según proyecto</span>
@@ -309,9 +338,7 @@
               <span>Iteraciones ágiles</span>
             </div>
             <div class="service-cta">
-              <a
-                href="mailto:contacto@greentechnological.com?subject=MVP%20y%20prototipado"
-              >
+              <a href="mailto:contacto@greentechnological.com?subject=MVP%20y%20prototipado">
                 Empezar con un MVP
               </a>
               <span>Ideal para nuevas iniciativas</span>
@@ -332,9 +359,7 @@
               <span>Optimización de carga</span>
             </div>
             <div class="service-cta">
-              <a
-                href="mailto:contacto@greentechnological.com?subject=Landing%20Page"
-              >
+              <a href="mailto:contacto@greentechnological.com?subject=Landing%20Page">
                 Necesito una landing
               </a>
               <span>Excelente para campañas</span>
@@ -355,9 +380,7 @@
               <span>Acompañamiento continuo</span>
             </div>
             <div class="service-cta">
-              <a
-                href="mailto:contacto@greentechnological.com?subject=Soporte%20y%20mantenimiento"
-              >
+              <a href="mailto:contacto@greentechnological.com?subject=Soporte%20y%20mantenimiento">
                 Preguntar por planes
               </a>
               <span>Modelos flexibles</span>
@@ -378,9 +401,7 @@
               <span>Análisis de riesgos</span>
             </div>
             <div class="service-cta">
-              <a
-                href="mailto:contacto@greentechnological.com?subject=Consultor%C3%ADa%20tecnol%C3%B3gica"
-              >
+              <a href="mailto:contacto@greentechnological.com?subject=Consultor%C3%ADa%20tecnol%C3%B3gica">
                 Agendar una sesión
               </a>
               <span>Sesiones por hora</span>
@@ -390,7 +411,6 @@
       </div>
     </main>
 
-    <!-- FOOTER: igual que el home -->
     <footer class="_footer_14vbs_2">
       <div class="page-container">
         <section class="_wrapper_14vbs_2">

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content="Astro v5.3.0" />
+    <title>Portafolio | Green Technological</title>
+    <link rel="stylesheet" href="/astro/index.CDtrkemx.css" />
+
+    <style>
+      :root {
+        --brand-navy: #0a3254;
+        --brand-navy-soft: #012f3f;
+        --brand-teal: #01a2ae;
+        --bg-page: #f5f7fa;
+        --text-main: #102a43;
+        --text-muted: #6b7280;
+        --card-border: #d0d7e2;
+      }
+
+      html {
+        font-size: 17px;
+      }
+
+      body.portfolio-page {
+        font-family: "Gotham Rounded", "Gilroy", system-ui, sans-serif;
+        background: var(--bg-page);
+        color: var(--text-main);
+      }
+
+      /* HEADER oscuro */
+      ._header_1bct4_2 {
+        background: linear-gradient(
+          135deg,
+          var(--brand-navy-soft),
+          var(--brand-navy)
+        );
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      }
+
+      ._links_1bct4_2 {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .nav-item {
+        color: white;
+        opacity: 0.8;
+        text-decoration: none;
+        font-size: 0.95rem;
+        padding: 0.35rem 0.4rem;
+        border-bottom: 2px solid transparent;
+        transition: 0.15s ease;
+      }
+
+      .nav-item:hover {
+        opacity: 1;
+        border-color: rgba(1, 162, 174, 0.4);
+      }
+
+      .nav-item.active {
+        opacity: 1;
+        font-weight: 600;
+        border-color: var(--brand-teal);
+      }
+
+      main {
+        padding: 4rem 1.5rem;
+      }
+
+      .portfolio-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .portfolio-intro h1 {
+        font-size: clamp(2.1rem, 3vw, 2.6rem);
+        font-weight: 700;
+        color: var(--brand-navy);
+        margin-bottom: 0.75rem;
+      }
+
+      .portfolio-intro p {
+        max-width: 640px;
+        color: var(--text-muted);
+        font-size: 1.05rem;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+
+      .project-card {
+        background: #fff;
+        padding: 1.6rem;
+        border-radius: 1rem;
+        border: 1px solid var(--card-border);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        position: relative;
+      }
+
+      .project-card:hover {
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .project-tag {
+        font-size: 0.75rem;
+        color: var(--brand-teal);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .project-name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--brand-navy-soft);
+      }
+
+      .project-domain a {
+        text-decoration: none;
+        color: var(--brand-navy);
+        font-size: 0.9rem;
+      }
+
+      .project-desc {
+        font-size: 1rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      .project-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .project-meta span {
+        background: #f3f5fb;
+        border: 1px solid #d4dde9;
+        padding: 0.2rem 0.6rem;
+        font-size: 0.85rem;
+        border-radius: 999px;
+      }
+
+      .project-cta a {
+        margin-top: 0.5rem;
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--brand-teal),
+          var(--brand-navy)
+        );
+        padding: 0.55rem 1rem;
+        color: white;
+        text-decoration: none;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .project-cta a:hover {
+        opacity: 0.92;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding: 2.5rem 1rem;
+        }
+
+        .project-card {
+          padding: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="portfolio-page">
+    <header class="_header_1bct4_2">
+      <div class="page-container">
+        <section class="_wrapper_1bct4_2">
+          <div class="_logo_1bct4_2">
+            <a href="/">
+              <img
+                src="/astro/logo.CR4Oi_Bi_Z1S3iMP.webp"
+                alt="Green Tech Logo"
+                width="200"
+              />
+            </a>
+          </div>
+          <div class="_links_1bct4_2">
+            <a href="/" class="nav-item">Home</a>
+            <a href="/services" class="nav-item">Services</a>
+            <a href="/portfolio" class="nav-item active">Portafolio</a>
+            <a href="/Contact" class="nav-item">Contacto</a>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main>
+      <div class="portfolio-container">
+        <section class="portfolio-intro">
+          <h1>Portafolio</h1>
+          <p>
+            Algunos de los proyectos reales desarrollados por Green Technological
+            para clientes de distintos sectores.
+          </p>
+        </section>
+
+        <section class="projects-grid">
+          <!-- Instituto Técnico Progresivo -->
+          <article class="project-card">
+            <div class="project-tag">Sitio web educativo</div>
+            <h2 class="project-name">Instituto Técnico Progresivo</h2>
+            <div class="project-domain">
+              <a
+                href="https://institutotecnicoprogresivo.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                institutotecnicoprogresivo.com
+              </a>
+            </div>
+
+            <p class="project-desc">
+              Rediseño y optimización del sitio institucional, facilitando
+              navegación, consulta de carreras y comunicación con estudiantes
+              potenciales.
+            </p>
+
+            <div class="project-meta">
+              <span>Web institucional</span>
+              <span>Optimización UX</span>
+              <span>Actualizable</span>
+            </div>
+
+            <div class="project-cta">
+              <a
+                href="https://institutotecnicoprogresivo.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                Ver sitio
+              </a>
+            </div>
+          </article>
+
+          <!-- Sign-Bridge -->
+          <article class="project-card">
+            <div class="project-tag">Plataforma de accesibilidad</div>
+            <h2 class="project-name">Sign-Bridge</h2>
+            <div class="project-domain">
+              <a
+                href="https://www.sign-bridge.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                sign-bridge.com
+              </a>
+            </div>
+
+            <p class="project-desc">
+              Plataforma SaaS para interpretación en LESCO. Integra pagos,
+              módulos de clientes, reportes y administración operativa, con
+              foco en accesibilidad y cumplimiento de la Ley 9822.
+            </p>
+
+            <div class="project-meta">
+              <span>SaaS</span>
+              <span>Integraciones</span>
+              <span>Accesibilidad</span>
+            </div>
+
+            <div class="project-cta">
+              <a
+                href="https://www.sign-bridge.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                Ver sitio
+              </a>
+            </div>
+          </article>
+
+          <!-- Conectia Soluciones -->
+          <article class="project-card">
+            <div class="project-tag">Servicios empresariales</div>
+            <h2 class="project-name">Conectia Soluciones</h2>
+            <div class="project-domain">
+              <a
+                href="https://conectiasoluciones.net/"
+                target="_blank"
+                rel="noopener"
+              >
+                conectiasoluciones.net
+              </a>
+            </div>
+
+            <p class="project-desc">
+              Sitio corporativo para empresa de soluciones empresariales,
+              orientado a comunicar servicios, generar confianza y facilitar
+              la captación de nuevos clientes.
+            </p>
+
+            <div class="project-meta">
+              <span>Sitio corporativo</span>
+              <span>SEO básico</span>
+              <span>Enfoque B2B</span>
+            </div>
+
+            <div class="project-cta">
+              <a
+                href="https://conectiasoluciones.net/"
+                target="_blank"
+                rel="noopener"
+              >
+                Ver sitio
+              </a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="_footer_14vbs_2">
+      <div class="page-container">
+        <section class="_wrapper_14vbs_2">
+          <p>© 2025. Todos los derechos reservados.</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
